@@ -1,16 +1,18 @@
 import MainLayout from "@/layouts/MainLayout";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MusicIndex = () => {
   return (
     <MainLayout>
       <div className="flex flex-col p-6 w-full">
         <h1 className=" text-xl font-semibold">Popular music by Buravan</h1>
-        <div className="grid w-full mt-4 lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap-11">
-          {new Array(10).fill(0).map((_, i) => (
-            <div
+        <div className="grid w-full mt-4 lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap11">
+          {new Array(12).fill(0).map((_, i) => (
+            <Link
+              to={`/music/${i}`}
               key={i}
-              className="flex duration-300 cursor-pointer music-card max-w-[400px] relative aspect-square overflow-hidden border flex-col items-center justify-center bg-white rounded-lg shadow-md"
+              className="flex duration-300 p-0 m-0 border-0 cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
             >
               <img
                 className=" absolute top-0"
@@ -24,7 +26,7 @@ const MusicIndex = () => {
                   Quisquam, voluptatibus!
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
