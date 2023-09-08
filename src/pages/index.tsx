@@ -1,9 +1,12 @@
-import React from 'react'
+import MainLayout from "@/layouts/MainLayout";
+import React from "react";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <MainLayout>
+      <div className="min-h-[90vh]">Home</div>
+    </MainLayout>
+  );
+};
 
-export default Home
+export default Home;

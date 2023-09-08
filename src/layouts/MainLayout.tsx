@@ -8,8 +8,8 @@ interface MainLayoutProps {
 
 const MainLayout = ({children}: MainLayoutProps) => {
   return (
-    <div className='flex flex-col w-full'>
-      <Navbar />
+    <div className='flex bg-[#100000] flex-col w-full'>
+
       {children}
       <Footer />
     </div>

@@ -22,6 +22,9 @@ export default {
         xtab: "960px",
         desktop: "1280px",
       },
+      fontFamily: {
+        luckyGuy: ["Luckiest Guy", "cursive"],
+      },
     },
   },
   plugins: [],

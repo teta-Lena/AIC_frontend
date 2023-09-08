@@ -9,12 +9,12 @@ import {
 const Footer = () => {
 
     return (
-		<div className="w-full flex flex-col items-center bg-dark-blue text-white relative z-10 overflow-hidden py-2">
+		<div className="w-full flex flex-col items-center bg-[#390101] text-white relative z-10 overflow-hidden py-2">
 			<div className="ltab:flex w-full grid five:grid-cols-2 justify-between xtab:px-20 phone:px-4 px-2 py-10 gap-5">
 				<div className="flex text-sm ltab:text-base flex-col five:items-start items-center">
 					<img className="ltab:w-[150px] w-[100px]" src="/logoq.png" alt="" />
 					<p className="ltab:mt-4 mt-1 text-center phone:text-start">
-						Simplify your work with us. Need to know more about us? contact us.
+						Need to know more about us? contact us.
 					</p>
 					<div className="flex items-center tablet:ml-4 mt-4">
 						<a
@@ -106,7 +106,7 @@ const Footer = () => {
 							placeholder="Enter your email"
 						/>
 						<button
-							className={`rounded-3xl bg-dark-blue text-white ml-3 font-semibold px-4 py-2`}
+							className={`rounded-3xl bg-[#390101] text-white ml-3 font-semibold px-4 py-2`}
 						>
 							Subscribe
 						</button>
