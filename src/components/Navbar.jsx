@@ -1,9 +1,8 @@
 import React from "react";
-
 const Navbar = () => {
   return (
-    <div>
-      <nav>
+    <div className="container">
+      {/* <nav>
         <ul>
           <li>Home</li>
           <li>Music</li>
@@ -11,7 +10,9 @@ const Navbar = () => {
           <li>Biography</li>
           <li>Store</li>
         </ul>
-      </nav>
+      </nav> */}
+      <p>{"THE ARIEL WAYZ EXPERIENCE TOUR"}</p>
+      <button type="button">VIEW DATES</button>
     </div>
   );
 };
