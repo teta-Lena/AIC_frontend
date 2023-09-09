@@ -1,3 +1,15 @@
+/* <<<<<<< HEAD
 .container {
   display: flex;
 }
+======= */
+.music-card:hover > img {
+  /* zoom background image */
+  transform: scale(1.1);
+}
+
+.music-card img {
+  transition: transform 0.5s ease-in-out;
+  /* counter-reset: #100000; */
+}
+/* >>>>>>> 242c7868cb0ae1c7a20f7b537e640489ef7b8cf6 */
