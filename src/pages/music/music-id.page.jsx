@@ -1,5 +1,6 @@
 import Player from "@/components/music/player";
 import Suggested from "@/components/music/suggested";
+import MidNav from "@/components/shared/mid-nav";
 import MainLayout from "@/layouts/MainLayout";
 import React from "react";
 import { BsMusicNote } from "react-icons/bs";
@@ -7,7 +8,8 @@ import { Link } from "react-router-dom";
 
 const MusicIdPage = () => {
   return (
-    <MainLayout>
+    <MainLayout noBanner>
+      <MidNav hasLogo />
       <div className="min-h-[90vh] p-4 text-white flex flex-col">
         <div className="flex gap-3 w-full">
           <div className="flex w-2/3 flex-col">

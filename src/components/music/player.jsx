@@ -80,10 +80,11 @@ const Player = ({ src, thumbnail }) => {
             id="video"
             muted
             loop
+            preload="auto"
             poster="https://www.ktpress.rw/wp-content/uploads/2022/01/Ariel-wayz-1024x736-1.jpg"
             onContextMenu={(e, el) => onContextMenuHandler(e, el)}
           >
-            <source src="https://player.vimeo.com/external/269971860.sd.mp4?s=a3036bd1a9f15c1b31daedad98c06a3b24cdd747&profile_id=164&oauth2_token_id=57447761" />
+            <source src="https://player.vimeo.com/external/338064905.sd.mp4?s=468058f956610f28d7d8cab7fbc5890b004a9481&profile_id=164&oauth2_token_id=57447761" />
           </video>
           {showPausePlay.state && (
             <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center bg-black/10">
