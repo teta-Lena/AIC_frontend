@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ways3 from "@/assets/wayz/.jpg";
-import ways2 from "@/assets/wayz/.jpg";
-import ways1 from "@/assets/wayz/.jpg";
+import ways3 from "@/assets/wayz/ariel-wayz.jpg";
+import ways2 from "@/assets/wayz/Smiles.jpg";
+import ways1 from "@/assets/wayz/smile.jpg";
 
 const Pictures = () => {
   const portfolios = [
@@ -47,20 +47,20 @@ const Pictures = () => {
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
+      className="bg-gradient-to-b from-black to-red-[#390101]/80  w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Portfolio
+            Pictures
           </p>
-          <p className="py-6">Check out some of my work right here</p>
+          <p className="py-6">Check out some of the pictures</p>
         </div>
 
         <div className="relative">
           <div
             key={portfolios[currentSlide].id}
-            className="transform transition-transform"
+            className="transform transition-transform flex flex-col items-center justify-center"
           >
             <img
               src={portfolios[currentSlide].src}
@@ -75,13 +75,13 @@ const Pictures = () => {
             onClick={prevSlide}
             className="absolute top-1/2 left-4 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10"
           >
-            <FaArrowLeft className="text-yellow-400" />
+            <FaArrowLeft />
           </button>
           <button
             onClick={nextSlide}
             className="absolute top-1/2 right-4 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10"
           >
-            <FaArrowRight className="text-yellow-400" />
+            <FaArrowRight />
           </button>
         </div>
       </div>

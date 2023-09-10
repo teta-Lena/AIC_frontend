@@ -11,7 +11,9 @@ const Bio = () => {
             
     <div>
         <Home />
-        <pictures />
+        <AboutHer />
+        <Pictures />
+        <Footer />
         
     </div>
     
