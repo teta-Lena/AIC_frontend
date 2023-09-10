@@ -13,6 +13,14 @@ import pic8 from "../assets/pic8.jpg";
 import pic9 from "../assets/pic9.jpg";
 import pic10 from "../assets/pic10.jpg";
 import Footer from "@/components/shared/footer";
+import {
+  FaNewspaper,
+  FaMusic,
+  FaVideo,
+  FaBrand,
+  FaCompactDisc,
+  FaCamera,
+} from "react-icons/fa";
 
 const Homepage = () => {
   return (
