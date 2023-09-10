@@ -9,6 +9,7 @@ export default {
         'dark-blue': '#141448',
         'main-yellow': '#FFD700',
         'main-gray': '#C0C0C0',
+        'bg-african': '#390101',
         ...colors,
       },
       screens: {
@@ -24,6 +25,7 @@ export default {
       },
       fontFamily: {
         luckyGuy: ["Luckiest Guy", "cursive"],
+        'roboto-serif': ['Roboto Serif', 'serif'],
       },
     },
   },

@@ -1,20 +1,14 @@
-import { Link } from "react-router-dom";
+/* eslint-disable react/no-unescaped-entities */
 
 const Navbar = () => {
   return (
-    <div className="flex sticky bg-dark-blue text-white justify-between px-8 py-4 items-center w-full">
-      <div className="flex items-center">
-        <img src={"/vite.svg"} alt="Vite Logo" className="w-8 h-8 mr-4" />
-        <h1 className="text-xl font-bold">Music</h1>
-      </div>
-      <div className="flex items-center gap-x-3">
-        <Link to="/" className=" hover:text-main-yellow duration-300">
-          Home
-        </Link>
-        <Link to="/about"  className=" hover:text-main-yellow duration-300">About</Link>
-        <Link to="/music"  className=" hover:text-main-yellow duration-300">Music</Link>
-      </div>
-
+    <div className="flex sticky items-center font-luckyGuy justify-center  bg-white p-3">
+      <span className=" text-3xl uppercase font-bold">
+        "Ariel Ways" The Live Experience
+      </span>
+      <button className="ml-4 bg-black text-white px-8 py-2 ">
+        View Dates
+      </button>
     </div>
   );
 };

@@ -9,14 +9,6 @@ import { Link } from "react-router-dom";
 const MusicIndex = () => {
   return (
     <MainLayout>
-      <div className="flex items-center font-luckyGuy justify-center  bg-white p-3">
-        <span className=" text-3xl uppercase font-bold">
-          "Ariel Ways" The Live Experience
-        </span>
-        <button className="ml-4 bg-black text-white px-8 py-2 ">
-          View Dates
-        </button>
-      </div>
       <div className="flex font-luckyGuy overflow-hidden h-[60vh] flex-col relative w-full">
         <img
           className=" absolute top-0 bottom-0 right-0 w-full max-h-full left-0 object-cover"
@@ -50,7 +42,7 @@ const MusicIndex = () => {
                 <button className="text-xl rounded-full w-11 border-2 h-11 items-center justify-center flex font-semibold">
                   <BsMusicNote />
                 </button>
-                <span>May 3, 2023</span>
+                <span className=" font-roboto-serif">May 3, 2023</span>
                 <p className="text-2xl mt-4 font-bold text-center">
                   Good Luck
                 </p>
