@@ -4,7 +4,7 @@ import Controls from "./controlls";
 import { BiPause, BiPlay } from "react-icons/bi";
 import useAverageColor from "@/hooks/use-average-color";
 
-const Player = ({ src, thumbnail }) => {
+const Player = ({ src, ytId, thumbnail }) => {
   const vidEl = useRef(null);
   const {
     playerState,
@@ -50,12 +50,20 @@ const Player = ({ src, thumbnail }) => {
 
   useEffect(() => {
     const curRef = vidEl.current;
-    playerState.isPlaying ? curRef?.play() : curRef?.pause()
-  }, [playerState.isPlaying, vidEl])
+    playerState.isPlaying ? curRef?.play() : curRef?.pause();
+  }, [playerState.isPlaying, vidEl]);
 
   return (
     <div className=" aspect-video w-full">
-      <div className={`w-full flex gap-2 text-white relative player`}>
+      <iframe
+        className=" w-full aspect-video"
+        src={`https://www.youtube.com/embed/${ytId}?autoplay=1&si=xvMxYxXakoaxAvRi`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+      {/* <div className={`w-full flex gap-2 text-white relative player`}>
         <div
           onMouseMove={() => {
             setHide(false);
@@ -102,7 +110,7 @@ const Player = ({ src, thumbnail }) => {
           )}
         </div>
         {vidEl && <Controls togglePlay={togglePlay} vidEl={vidEl?.current} />}
-      </div>
+      </div> */}
     </div>
   );
 };
