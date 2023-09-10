@@ -4,7 +4,7 @@ import Navbar from "../components/r-Navbar";
 import { Link } from "react-router-dom";
 import img from "../assets/pic12.jpg";
 
-import vid from "../assets/riyeliweyizi.mp4";
+import vid from "../assets/ariel.mp4";
 import pic2 from "../assets/pic2.jpg";
 import pic3 from "../assets/pic3.jpg";
 import pic5 from "../assets/pic6.jpg";
@@ -26,19 +26,35 @@ import {
   FaCalculator,
   FaMicrophone,
   FaCross,
+  FaHistory,
 } from "react-icons/fa";
 import MidNav from "@/components/shared/mid-nav";
 
 const Homepage = () => {
   const pics = [
-    { image: img, option: "MERCH", icon: <FaTshirt /> },
-    { image: pic2, option: "DISCOGRAPHY", icon: <FaCalculator /> },
-    { image: pic3, option: "UPCOMING SHOWS", icon: <FaMicrophone /> },
-    { image: pic6, option: "SHAYO OUT NOW", icon: <FaNewspaper /> },
-    { image: pic7, option: "MUSIC", icon: <FaMusic /> },
-    { image: pic8, option: "VIDEOS", icon: <FaVideo /> },
-    { image: pic9, option: "PHOTOS", icon: <FaCamera /> },
-    { image: pic10, option: "COLLABORATIONS", icon: <FaCross /> },
+    { image: img, option: "MERCH", icon: <FaTshirt />, link: "/store" },
+    {
+      image: pic2,
+      option: "DISCOGRAPHY",
+      icon: <FaCalculator />,
+      link: "/albums",
+    },
+    {
+      image: pic3,
+      option: "UPCOMING SHOWS",
+      icon: <FaMicrophone />,
+      link: "/live",
+    },
+    {
+      image: pic6,
+      option: "SHAYO OUT NOW",
+      icon: <FaNewspaper />,
+      link: "/news",
+    },
+    { image: pic7, option: "MUSIC", icon: <FaMusic />, link: "/music" },
+    { image: pic8, option: "VIDEOS", icon: <FaVideo />, link: "/videos" },
+    { image: pic9, option: "PHOTOS", icon: <FaCamera />, link: "/photos" },
+    { image: pic10, option: "BIOGRAPHY", icon: <FaHistory />, link: "/bio" },
     {
       image: pic13,
       option: "LATEST NEWS",
@@ -46,16 +62,18 @@ const Homepage = () => {
       icon: <FaNewspaper />,
     },
   ];
-  // const options = ["VIDEOS", "PHOTOS", "COLLABORATIONS"];
   return (
     <div className="full-container">
       <Navbar />
 
       <div className="home-container">
         <div className="home-video">
-          <video autoPlay="autoplay" loop muted className="home-video">
-            <source src={vid} type="video/mp4" />
-          </video>
+          <div className="video-wrapper" style={{ height: "575px" }}>
+            <video autoPlay loop muted className="home-video">
+              <source src={vid} type="video/mp4" />
+            </video>
+            <div className="video-overlay"></div>
+          </div>
         </div>
 
         <div className="header-song">
@@ -64,47 +82,11 @@ const Homepage = () => {
         </div>
         <MidNav />
 
-        {/* <div className="info-container">
-          <div>
-            <img src={pic2} alt="" />
-            <div className="captions">NEW SINGLE BAD OUT NOW</div>
-          </div>
-          <div>
-            <img src={pic10} alt="" />
-            <div className="captions">ARIEL'S DISCOGRAPHY</div>
-          </div>
-          <div>
-            <img src={pic9} alt="" />
-            <div className="captions"> ARIEL'S UPCOMING SHOWS</div>
-          </div>
-          <div>
-            <img src={pic8} alt="" />
-            <div className="captions">
-              <FaTshirt className="text-xl text-[#345cd4]" />
-              ARIEL'S CLOTHING BRAND
-            </div>
-          </div>
-          <div>
-            <img src={pic6} alt="" />
-            <div className="captions">
-              <FaCamera className="text-xl text-[#345cd4]" />
-              ARIEL's PHOTOS
-            </div>
-          </div>
-          <div>
-            <img src={pic7} alt="" />
-            <div className="captions">
-              <FaVideo className="text-xl text-[#345cd4]" />
-              ARIEL's Videos
-            </div>
-          </div>
-        </div> */}
-
         <div className="flex flex-col w-full">
           <div className="grid w-full lg:grid-cols-3 md:grid-cols-3 five:grid-cols-2   gap11">
             {pics.map((pic, i) => (
               <Link
-                to={`/music/${i}`}
+                to={pic.link}
                 key={i}
                 className="flex duration-300 p-0 m-0 border-0 cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
               >
