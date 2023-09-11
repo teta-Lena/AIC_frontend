@@ -16,6 +16,7 @@ const Home = () => {
           className=" absolute top-0 bottom-0 right-0 w-full max-h-full left-0 object-cover"
           src="https://www.ktpress.rw/wp-content/uploads/2022/01/Ariel-wayz-1024x736-1.jpg"
           alt=""
+          loading="lazy"
         />
         <div className="bg-[#390101]/80 absolute top-0 w-full left-0 h-full"></div>
         <div className="flex p-8 z-10 items-center w-fit flex-col gap-y-2">
@@ -26,6 +27,7 @@ const Home = () => {
         </div>
         <Socials />
       </div>
+      <h1 className=" text-center text-xl font-semibold text-white py-4">Browser</h1>
       <div className="flex flex-col min-h-[90vh] w-full">
         <div className="grid w-full lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap11">
           <Link

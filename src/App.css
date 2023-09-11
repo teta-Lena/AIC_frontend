@@ -5,6 +5,7 @@
 
 .music-card img {
     transition: transform 0.5s ease-in-out;
+    /* background-size: 00%; */
     /* counter-reset: #100000; */
 }
 
