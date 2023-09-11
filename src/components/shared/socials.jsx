@@ -4,7 +4,7 @@ import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 
 const Socials = () => {
   return (
-    <div className="flex absolute right-4 -translate-y-1/2 top-1/2 items-center gap-y-6 py-6 px-2 bg-[#1d0707] text-gray-200 flex-col">
+    <div className="flex absolute right-4 -translate-y-1/2 top-1/2 items-center gap-y-6 py-6 px-2 bg-dark-brownish text-gray-200 flex-col">
       <a
         className="flex items-center px-2"
         href="https://www.facebook.com/ishimwendungutsecharles"
