@@ -19,7 +19,6 @@ import {
   FaNewspaper,
   FaMusic,
   FaVideo,
-  // FaBrand,
   FaCompactDisc,
   FaCamera,
   FaTshirt,
@@ -36,7 +35,7 @@ const Homepage = () => {
     {
       image: pic2,
       option: "DISCOGRAPHY",
-      icon: <FaCalculator />,
+      icon: <FaCompactDisc />,
       link: "/albums",
     },
     {
