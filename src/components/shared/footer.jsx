@@ -1,12 +1,10 @@
 import { BiEnvelopeOpen, BiGlobe } from "react-icons/bi";
 import {
-	FaLinkedin,
-	FaGithubSquare,
-	FaFacebookSquare,
-	FaInstagramSquare,
+  FaLinkedin,
+  FaGithubSquare,
+  FaFacebookSquare,
+  FaInstagramSquare,
 } from "react-icons/fa";
-
-const Footer = () => {
 
     return (
 		<div className="w-full flex flex-col border-2 border-t-black items-center bg-[#390101] border-t  text-white relative z-10 overflow-hidden py-2">
