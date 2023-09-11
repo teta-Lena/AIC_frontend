@@ -7,10 +7,6 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
-	const HandleClick = (e) => { 
-		e.preventDefault();
-		
-	}
 
     return (
 		<div className="w-full flex flex-col border-2 border-t-black items-center bg-[#390101] border-t  text-white relative z-10 overflow-hidden py-2">
@@ -105,10 +101,9 @@ const Footer = () => {
 					<p className="ltab:mt-4 mt-1">Get the latest news and updates</p>
 					<div className="flex mt-4 rounded-[3.5em] bg-white pl-3 py-1 pr-1 text-sm">
 						<input
-							className="w-full border-none outline-none "
+							className="w-full border-none outline-none text-gray-600"
 							type="email"
 							placeholder="Enter your email"
-							onChange={(e) => e.target.value}
 						/>
 						<button
 							className={`rounded-3xl bg-[#390101] text-white ml-3 font-semibold px-4 py-2`}
