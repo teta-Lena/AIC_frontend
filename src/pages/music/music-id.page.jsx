@@ -23,7 +23,7 @@ const MusicIdPage = () => {
       <MidNav hasLogo />
       <div className="min-h-[90vh] p-4 text-white flex flex-col">
         <div className="flex gap-3 w-full">
-          <div className="flex w-2/3 flex-col">
+          <div className="flex lg:w-2/3 w-full flex-col">
             <Player ytId={music?.ytId}  />
             <div className="w-1/2 mt-4 px-3 gap-y-2 flex-col flex">
               <h1 className=" font-luckyGuy">{music?.title}</h1>
