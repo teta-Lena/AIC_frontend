@@ -7,9 +7,10 @@ import AuthProvider from "./contexts/AuthContext.jsx";
 import { PlayerProvider } from "./contexts/PlayerContext.jsx";
 import StreamProvider from "./contexts/StreamContext.jsx";
 import "./index.css";
+import ErrorBoundary from "./components/core/ErrorBoundary.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <ErrorBoundary>
     <AuthProvider>
       <StreamProvider>
         <PlayerProvider>
@@ -18,5 +19,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </PlayerProvider>
       </StreamProvider >
     </AuthProvider>
-  </React.StrictMode>
+  </ErrorBoundary>
 );
