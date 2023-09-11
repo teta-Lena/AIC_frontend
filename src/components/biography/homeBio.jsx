@@ -10,7 +10,6 @@ const HomeBio = () => {
       className="h-screen w-full bg-gradient-to-b from-bg-african to-black"
     >
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row gap-3 space-x-6">
-        // here is the HeroImage
         <div>
           <img
             src={HeroImage}
