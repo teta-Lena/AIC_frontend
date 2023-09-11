@@ -1,9 +1,9 @@
 import { BiEnvelopeOpen, BiGlobe } from "react-icons/bi";
 import {
-	FaLinkedin,
-	FaGithubSquare,
-	FaFacebookSquare,
-	FaInstagramSquare,
+  FaLinkedin,
+  FaGithubSquare,
+  FaFacebookSquare,
+  FaInstagramSquare,
 } from "react-icons/fa";
 
 const Footer = () => {
