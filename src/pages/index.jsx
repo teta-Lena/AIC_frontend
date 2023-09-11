@@ -5,11 +5,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <MainLayout>
-      <div className="min-h-[90vh] text-white">
-        <Link to={'/music'}>
-          Go To Music
-        </Link>
-      </div>
     </MainLayout>
   );
 };

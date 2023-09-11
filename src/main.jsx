@@ -1,16 +1,22 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import App from "./App.jsx";
-import { PlayerProvider } from "./contexts/PlayerContext.jsx";
-import "./index.css";
 import AuthProvider from "./contexts/AuthContext.jsx";
+import { PlayerProvider } from "./contexts/PlayerContext.jsx";
 import StreamProvider from "./contexts/StreamContext.jsx";
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AuthProvider>
-    <StreamProvider>
-      <PlayerProvider>
-        <App />
-      </PlayerProvider>
-    </StreamProvider >
-  </AuthProvider>
+  <React.StrictMode>
+    <AuthProvider>
+      <StreamProvider>
+        <PlayerProvider>
+          <ToastContainer />
+          <App />
+        </PlayerProvider>
+      </StreamProvider >
+    </AuthProvider>
+  </React.StrictMode>
 );
