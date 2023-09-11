@@ -6,7 +6,7 @@ import { BiLoaderAlt } from 'react-icons/bi'
 
 const Login = () => {
 
-    const { setViewLogin, setUser, setAuthenticated } = useAuthContext()
+    const { setViewLogin, setUser, setAuthenticated, setViewSignup } = useAuthContext()
     const [loginData, setLoginData] = useState({
         email: "",
         password: ""
@@ -34,10 +34,18 @@ const Login = () => {
     }
 
     return (
-        <div className='absolute z-10 backdrop-blur-sm w-screen h-screen flex items-center justify-center'>
-            <div className='w-full h-full absolute z-20' onClick={() => setViewLogin(false)}></div>
-            <div className='w-3/4 ltab:w-2/4 bg-white rounded-lg flex justify-center items-center flex-col z-30 p-6'>
-                <span className='font-bold'>Sign In</span>
+        <div className='absolute z-[60] backdrop-blur-sm w-screen h-screen flex items-center justify-center'>
+            <div className='w-full h-full absolute z-[70]' onClick={() => setViewLogin(false)}></div>
+            <div className='w-3/4 ltab:w-2/4 bg-white rounded-lg flex justify-center items-center flex-col z-[80] p-6'>
+                <span className='font-bold text-2xl font-luckyGuy'>Sign In</span>
+                <span className='flex my-4'>
+                    Not yet in the family ? &nbsp;
+                    <span className='text-blue-500 cursor-pointer' onClick={() => {
+                        setViewLogin(false)
+                        setViewSignup(true)
+                    }}>Sign Up</span>
+                </span>
+
                 <form className='w-full flex flex-col rounded-lg p-6' onSubmit={handleLogin}>
                     <div className='w-full flex my-3 flex-col items-start justify-center'>
                         <div className='my-1 w-full flex items-center justify-between'>
