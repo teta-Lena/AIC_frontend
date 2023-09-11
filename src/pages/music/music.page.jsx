@@ -1,9 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import MidNav from "@/components/shared/mid-nav";
-import Socials from "@/components/shared/socials";
 import MainLayout from "@/layouts/MainLayout";
 import musics from "@/utils/musics";
-import React from "react";
 import { BsMusicNote } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -25,7 +22,6 @@ const MusicIndex = () => {
         </div>
         <Socials />
       </div> */}
-      <MidNav hasLogo />
       <h1 className=" text-center text-white font-semibold text-2xl py-5">Music</h1>
       <div className="flex flex-col min-h-[90vh] w-full">
         <div className="grid w-full lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap11">

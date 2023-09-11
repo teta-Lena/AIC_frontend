@@ -1,6 +1,5 @@
 import Player from "@/components/music/player";
 import Suggested from "@/components/music/suggested";
-import MidNav from "@/components/shared/mid-nav";
 import MainLayout from "@/layouts/MainLayout";
 import musics from "@/utils/musics";
 import React, { useEffect } from "react";
@@ -17,10 +16,9 @@ const MusicIdPage = () => {
     console.log('music', params.id, musics);
     setMusic(music);
   }, [params.id]);
-  
+
   return (
     <MainLayout noBanner>
-      <MidNav hasLogo />
       <div className="min-h-[90vh] p-4 text-white flex flex-col">
         <div className="flex gap-3 w-full">
           <div className="flex lg:w-2/3 w-full flex-col">
@@ -28,7 +26,7 @@ const MusicIdPage = () => {
             <div className="w-1/2 mt-4 px-3 gap-y-2 flex-col flex">
               <h1 className=" font-luckyGuy">{music?.title}</h1>
               <span>
-               {music?.description}
+                {music?.description}
               </span>
               <span>Released: {music?.released}</span>
             </div>
@@ -46,7 +44,7 @@ const MusicIdPage = () => {
             >
               <img
                 className=" absolute top-0 bottom-0 right-0 left-0 min-w-full min-h-full object-cover"
-                src={music?.thumbnail??`https://i.ytimg.com/vi/${music?.ytId}/hqdefault.jpg`}
+                src={music?.thumbnail ?? `https://i.ytimg.com/vi/${music?.ytId}/hqdefault.jpg`}
                 alt={music?.title}
               />
               <div className="w-full text-white h-full text-center bg-[#0e0404]/70 items-center justify-center flex flex-col z-10">

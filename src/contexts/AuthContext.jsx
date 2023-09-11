@@ -9,6 +9,7 @@ export const useAuthContext = () => {
 const AuthProvider = ({ children }) => {
     const [authenticated, setAuthenticated] = useState(localStorage.getItem("token") ? true : false)
     const [user, setUser] = useState(localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {})
+    const [viewLogin, setViewLogin] = useState(false)
 
     return (
 
@@ -16,7 +17,9 @@ const AuthProvider = ({ children }) => {
             user,
             setUser,
             authenticated,
-            setAuthenticated
+            setAuthenticated,
+            viewLogin,
+            setViewLogin
         }}>
             {children}
         </AuthContext.Provider>

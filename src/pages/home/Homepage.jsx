@@ -80,7 +80,7 @@ const Homepage = () => {
           <p>"AWAY" is out now</p>
           <button type="button">STREAM</button>
         </div>
-        <MidNav />
+        <MidNav noLogin />
 
         <div className="flex flex-col w-full">
           <div className="grid w-full lg:grid-cols-3 md:grid-cols-3 five:grid-cols-2   gap11">
