@@ -10,6 +10,7 @@ import { Link, useParams } from "react-router-dom";
 const MusicIdPage = () => {
   const [music, setMusic] = React.useState(null);
   const params = useParams();
+  const otherMusics = musics.filter((music) => music.id !== Number(params.id));
 
   useEffect(() => {
     const music = musics.find((music) => music.id === Number(params.id));
@@ -37,7 +38,7 @@ const MusicIdPage = () => {
         <h1 className=" mt-6 text-xl px-2">More Videos</h1>
         {/* horizontal scroll */}
         <div className="flex flex-nowrap gap-4 overflow-x-auto mt-4">
-          {musics.map((music, i) => (
+          {otherMusics.map((music, i) => (
             <Link
               to={`/music/${music.id}`}
               key={i}
