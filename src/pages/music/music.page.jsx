@@ -2,6 +2,7 @@
 import MidNav from "@/components/shared/mid-nav";
 import Socials from "@/components/shared/socials";
 import MainLayout from "@/layouts/MainLayout";
+import musics from "@/utils/musics";
 import React from "react";
 import { BsMusicNote } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -9,7 +10,7 @@ import { Link } from "react-router-dom";
 const MusicIndex = () => {
   return (
     <MainLayout>
-      <div className="flex font-luckyGuy overflow-hidden h-[60vh] flex-col relative w-full">
+      {/* <div className="flex font-luckyGuy overflow-hidden h-[60vh] flex-col relative w-full">
         <img
           className=" absolute top-0 bottom-0 right-0 w-full max-h-full left-0 object-cover"
           src="https://www.ktpress.rw/wp-content/uploads/2022/01/Ariel-wayz-1024x736-1.jpg"
@@ -23,27 +24,32 @@ const MusicIndex = () => {
           </button>
         </div>
         <Socials />
-      </div>
-      <MidNav />
-      <div className="flex flex-col w-full">
+      </div> */}
+      <MidNav hasLogo />
+      <div className="flex flex-col min-h-[90vh] w-full">
         <div className="grid w-full lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap11">
-          {new Array(12).fill(0).map((_, i) => (
+          {musics.map((music) => (
             <Link
-              to={`/music/${i}`}
-              key={i}
-              className="flex duration-300 p-0 m-0 border-0 cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
+              to={`/music/${music.id}`}
+              key={music.id}
+              className="flex duration-300 border-[#454040] p-0 m-0 border-0 cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
             >
               <img
                 className=" absolute top-0 bottom-0 right-0 left-0 min-w-full min-h-full object-cover"
-                src="https://www.ktpress.rw/wp-content/uploads/2022/01/Ariel-wayz-1024x736-1.jpg"
+                src={
+                  music?.thumbnail ??
+                  `https://i.ytimg.com/vi/${music?.ytId}/hqdefault.jpg`
+                }
                 alt=""
               />
               <div className="w-full text-white h-full text-center bg-[#0e0404]/70 items-center justify-center flex flex-col z-10">
                 <button className="text-xl rounded-full w-11 border-2 h-11 items-center justify-center flex font-semibold">
                   <BsMusicNote />
                 </button>
-                <span className=" font-roboto-serif">May 3, 2023</span>
-                <p className="text-2xl mt-4 font-bold text-center">Good Luck</p>
+                <span className=" font-roboto-serif">{music?.released}</span>
+                <p className="text-2xl mt-4 font-bold text-center">
+                  {music.title}
+                </p>
               </div>
             </Link>
           ))}

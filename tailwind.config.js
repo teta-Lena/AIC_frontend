@@ -10,6 +10,7 @@ export default {
         'main-yellow': '#FFD700',
         'main-gray': '#C0C0C0',
         'bg-african': '#390101',
+        "dark-brownish": "#1d0707",
         ...colors,
       },
       screens: {

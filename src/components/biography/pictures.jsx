@@ -44,10 +44,12 @@ const Pictures = () => {
     );
   };
 
+  const imageStyle = "w-80 h-80 border-2 border-black-330"; // Apply the same style to all images
+
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-black to-red-[#390101]/80  w-full text-white md:h-screen"
+      className="bg-gradient-to-b from-dark-brownish to-bg-african w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
@@ -65,7 +67,7 @@ const Pictures = () => {
             <img
               src={portfolios[currentSlide].src}
               alt=""
-              className="rounded-md duration-200 hover:scale-105"
+              className={`rounded-md duration-200 hover:scale-105 w-200 h-200 ${imageStyle}`}
             />
             <div className="flex items-center justify-center"></div>
           </div>

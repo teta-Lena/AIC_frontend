@@ -1,19 +1,19 @@
 import React from "react";
-import Navbar from "../components/r-Navbar";
+import Navbar from "../../components/r-Navbar";
 // import img from "../assets/yb.jpeg";
 import { Link } from "react-router-dom";
-import img from "../assets/pic12.jpg";
+import img from "../../assets/pic12.jpg";
 
-import vid from "../assets/ariel.mp4";
-import pic2 from "../assets/pic2.jpg";
-import pic3 from "../assets/pic3.jpg";
-import pic5 from "../assets/pic6.jpg";
-import pic6 from "../assets/pic6.jpg";
-import pic7 from "../assets/pic7.jpg";
-import pic8 from "../assets/pic8.jpg";
-import pic9 from "../assets/pic9.jpg";
-import pic13 from "../assets/pic13.jpg";
-import pic10 from "../assets/pic10.jpg";
+import vid from "../../assets/ariel.mp4";
+import pic2 from "../../assets/pic2.jpg";
+import pic3 from "../../assets/pic3.jpg";
+import pic5 from "../../assets/pic6.jpg";
+import pic6 from "../../assets/pic6.jpg";
+import pic7 from "../../assets/pic7.jpg";
+import pic8 from "../../assets/pic8.jpg";
+import pic9 from "../../assets/pic9.jpg";
+import pic13 from "../../assets/pic13.jpg";
+import pic10 from "../../assets/pic10.jpg";
 import Footer from "@/components/shared/footer";
 import {
   FaNewspaper,

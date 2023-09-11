@@ -13,10 +13,10 @@
 // =======
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages";
+// import Home from "./pages";
 import MusicIndex from "./pages/music/music.page";
 import MusicIdPage from "./pages/music/music-id.page";
-import Homepage from "./screens/Homepage";
+import Homepage from "./pages/home/Homepage";
 import Bio from "./pages/bio/Bio";
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/music" element={<MusicIndex />} />
-        <Route path="/music/:id" element={<MusicIdPage />} />
         <Route path="/music/:id" element={<MusicIdPage />} />
         <Route path="/bio" element={<Bio />} />
       </Routes>
