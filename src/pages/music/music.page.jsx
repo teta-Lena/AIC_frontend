@@ -26,13 +26,14 @@ const MusicIndex = () => {
         <Socials />
       </div> */}
       <MidNav hasLogo />
+      <h1 className=" text-center text-white font-semibold text-2xl py-5">Music</h1>
       <div className="flex flex-col min-h-[90vh] w-full">
         <div className="grid w-full lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap11">
           {musics.map((music) => (
             <Link
               to={`/music/${music.id}`}
               key={music.id}
-              className="flex duration-300 border-[#454040] p-0 m-0 border cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
+              className="flex duration-300 border-[#270d0d] p-0 m-0 border cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
             >
               <img
                 className="  absolute top-0 bottom-0 right-0 left-0 min-w-full min-h-full object-cover"

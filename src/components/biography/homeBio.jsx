@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unknown-property */
-import React from "react";
 import HeroImage from "@/assets/wayz/Inwedding.jpeg";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { Link } from "react";
 
 const HomeBio = () => {
   return (
