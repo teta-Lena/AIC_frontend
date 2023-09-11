@@ -9,3 +9,4 @@ const Suggested = () => {
 }
 
 export default Suggested
+

@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "@/assets/wayz/loughs.jpg";
+import HeroImage from "@/assets/wayz/Inwedding.jpeg";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react";
 
@@ -15,7 +15,7 @@ const HomeBio = () => {
           <img
             src={HeroImage}
             alt="my profile"
-            className="rounded-2xl mx-auto w-2/3 md:w-full"
+            className="rounded-2xl mx-auto  md:w-full w-auto h-auto"
           />
         </div>
         <div className="flex flex-col justify-center h-full text-black">
@@ -37,7 +37,7 @@ const HomeBio = () => {
               to="portfolio"
               smooth
               duration={500}
-              className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+              className="group text-white w-fit px-6 py-3 my-7 flex items-center rounded-md bg-gradient-to-r from-bg-african to-dark-brownish cursor-pointer"
             >
               Read Biography
               <span className="group-hover:rotate-90 duration-300">

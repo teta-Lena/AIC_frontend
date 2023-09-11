@@ -7,6 +7,10 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+	const HandleClick = (e) => { 
+		e.preventDefault();
+		
+	}
 
     return (
 		<div className="w-full flex flex-col border-2 border-t-black items-center bg-[#390101] border-t  text-white relative z-10 overflow-hidden py-2">
@@ -104,9 +108,11 @@ const Footer = () => {
 							className="w-full border-none outline-none "
 							type="email"
 							placeholder="Enter your email"
+							onChange={(e) => e.target.value}
 						/>
 						<button
 							className={`rounded-3xl bg-[#390101] text-white ml-3 font-semibold px-4 py-2`}
+							
 						>
 							Subscribe
 						</button>
