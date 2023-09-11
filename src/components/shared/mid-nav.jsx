@@ -33,7 +33,7 @@ const MidNav = ({ hasLogo = false }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className=" sticky top-0 z-[5] w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
+    <div className=" sticky top-0 z-[50] w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
       <div className="">{hasLogo && <Logo />}</div>
       <div
         className={`flex md:static fixed md:pt-0 pt-11 gap-y-4 duration-500 md:w-fit left-0 flex-col md:flex-row w-full bg-inherit ${isMobile ? "top-0 bottom-0" : "-top-[964px]"
