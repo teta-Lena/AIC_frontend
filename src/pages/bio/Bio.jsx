@@ -10,7 +10,7 @@ const Bio = () => {
   return (
     <div>
       <Home />
-      <MidNav />
+      <MidNav hasLogo/>
       <AboutHer />
       <Pictures />
       <Footer />
