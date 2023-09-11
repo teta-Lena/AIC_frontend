@@ -10,9 +10,9 @@ export const Logo = () => (
 );
 
 const MidNav = ({ hasLogo = false }) => {
-  const { authenticated,setViewLogin } = useAuthContext()
+  const { authenticated, setViewLogin } = useAuthContext()
   return (
-    <div className=" sticky top-0 z-50 w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
+    <div className=" sticky top-0 z-[5] w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
       <div className="">{hasLogo && <Logo />}</div>
       <div className="flex gap-x-8 items-center">
         <Link to={"/"} className="">
@@ -36,8 +36,8 @@ const MidNav = ({ hasLogo = false }) => {
       </div>
       <div className="">
         {
-          !authenticated ??
-          <button className="bg-white px-4 py-2 rounded-lg text-xl" onClick={()=>setViewLogin(true)}>Login</button>
+          !authenticated &&
+          <button className="bg-white px-6 py-1 rounded-lg text-lg font-semibold text-black" onClick={() => setViewLogin(true)}>Login</button>
         }
       </div>
     </div>

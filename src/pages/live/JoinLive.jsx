@@ -1,5 +1,5 @@
+import api from '@/api'
 import MainLayout from '@/layouts/MainLayout'
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { AiOutlineVideoCamera } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
@@ -19,7 +19,7 @@ const JoinLive = () => {
 
     const getStreams = async () => {
         try {
-            const request = await axios.get("http://localhost:5000/api/v1/stream/get-streams?page=0&limit=5", {
+            const request = await api().get("/stream/get-streams?page=0&limit=5", {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`,
                     "Content-Type": "application/json"
