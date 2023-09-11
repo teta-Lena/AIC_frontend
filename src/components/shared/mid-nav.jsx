@@ -11,8 +11,8 @@ export const Logo = () => (
   </Link>
 );
 
-const MidNav = ({ hasLogo = false, noLogin = false }) => {
-  const { authenticated, setViewLogin } = useAuthContext();
+const MidNav = ({ hasLogo = false }) => {
+  const { authenticated, setViewLogin, setAuthenticated, setUser } = useAuthContext()
   const [path, setPath] = React.useState("");
   const location = useLocation();
   const [isMobile, setIsMobile] = React.useState(false);
@@ -36,9 +36,8 @@ const MidNav = ({ hasLogo = false, noLogin = false }) => {
     <div className=" sticky top-0 z-[50] w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
       <div className="">{hasLogo && <Logo />}</div>
       <div
-        className={`flex md:static fixed md:pt-0 pt-11 gap-y-4 duration-500 md:w-fit left-0 flex-col md:flex-row w-full bg-inherit ${
-          isMobile ? "top-0 bottom-0" : "-top-[964px]"
-        } gap-x-8 items-center`}
+        className={`flex md:static fixed md:pt-0 pt-11 gap-y-4 duration-500 md:w-fit left-0 flex-col md:flex-row w-full bg-inherit ${isMobile ? "top-0 bottom-0" : "-top-[964px]"
+          } gap-x-8 items-center`}
       >
         {isMobile && (
           <BiX
@@ -66,24 +65,26 @@ const MidNav = ({ hasLogo = false, noLogin = false }) => {
           Live
         </Link>
       </div>
-      {!noLogin ? (
-        <div className="">
-          {!authenticated && (
-            <button
-              className="bg-white px-6 py-1 rounded-lg text-lg font-semibold text-black"
-              onClick={() => setViewLogin(true)}
-            >
-              Login
-            </button>
-          )}
-          <button onClick={() => setIsMobile(!isMobile)} className="">
-            <FaBars className=" md:hidden" />
-          </button>
-        </div>
-      ) : (
-        <div></div>
-      )}
-    </div>
+      <div className="">
+        {
+          !authenticated &&
+          <button className="bg-white px-6 py-1 rounded-lg text-lg font-semibold text-black" onClick={() => setViewLogin(true)}>Login</button>
+        }
+
+        {
+          authenticated &&
+          <button className="bg-white px-6 py-1 rounded-lg text-lg font-semibold text-black" onClick={() => {
+            setAuthenticated(false)
+            setUser({})
+            localStorage.removeItem("token")
+            localStorage.removeItem("user")
+          }}>Logout</button>
+        }
+        <button onClick={() => setIsMobile(!isMobile)} className="">
+          <FaBars className=" md:hidden" />
+        </button>
+      </div >
+    </div >
   );
 };
 
