@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const MusicIndex = () => {
   return (
     <MainLayout>
-      <div className="flex font-luckyGuy overflow-hidden h-[60vh] flex-col relative w-full">
+      {/* <div className="flex font-luckyGuy overflow-hidden h-[60vh] flex-col relative w-full">
         <img
           className=" absolute top-0 bottom-0 right-0 w-full max-h-full left-0 object-cover"
           src="https://www.ktpress.rw/wp-content/uploads/2022/01/Ariel-wayz-1024x736-1.jpg"
@@ -23,7 +23,7 @@ const MusicIndex = () => {
           </button>
         </div>
         <Socials />
-      </div>
+      </div> */}
       <MidNav />
       <div className="flex flex-col w-full">
         <div className="grid w-full lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap11">
