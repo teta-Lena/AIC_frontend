@@ -1,3 +1,4 @@
+import { useAuthContext } from "@/contexts/AuthContext";
 import React, { useEffect } from "react";
 import { BiX } from "react-icons/bi";
 import { FaBars } from "react-icons/fa";
@@ -10,7 +11,8 @@ export const Logo = () => (
   </Link>
 );
 
-const MidNav = ({ hasLogo = false }) => {
+const MidNav = ({ hasLogo = false, noLogin = false }) => {
+  const { authenticated, setViewLogin } = useAuthContext();
   const [path, setPath] = React.useState("");
   const location = useLocation();
   const [isMobile, setIsMobile] = React.useState(false);
@@ -22,7 +24,7 @@ const MidNav = ({ hasLogo = false }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setIsMobile(true);
+        // setIsMobile(true);
       } else {
         setIsMobile(false);
       }
@@ -31,10 +33,10 @@ const MidNav = ({ hasLogo = false }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className=" sticky top-0 z-50 w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
+    <div className=" sticky top-0 z-[50] w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
       <div className="">{hasLogo && <Logo />}</div>
       <div
-        className={`flex md:static fixed md:pt-0 pt-11 gap-y-4 duration-500 md:w-fit top-0 left-0 flex-col md:flex-row w-full bg-inherit ${
+        className={`flex md:static fixed md:pt-0 pt-11 gap-y-4 duration-500 md:w-fit left-0 flex-col md:flex-row w-full bg-inherit ${
           isMobile ? "top-0 bottom-0" : "-top-[964px]"
         } gap-x-8 items-center`}
       >
@@ -60,15 +62,27 @@ const MidNav = ({ hasLogo = false }) => {
         <Link to={"/store"} className={path === "/store" ? "border-b-2" : ""}>
           Store
         </Link>
-        <Link to={"/live"} className={path === "/live" ? "border-b-2" : ""}>
+        <Link to={"/join-live"} className="">
           Live
         </Link>
       </div>
-      <div className="">
-        <button onClick={() => setIsMobile(!isMobile)} className="">
-          <FaBars className=" md:hidden" />
-        </button>
-      </div>
+      {!noLogin ? (
+        <div className="">
+          {!authenticated && (
+            <button
+              className="bg-white px-6 py-1 rounded-lg text-lg font-semibold text-black"
+              onClick={() => setViewLogin(true)}
+            >
+              Login
+            </button>
+          )}
+          <button onClick={() => setIsMobile(!isMobile)} className="">
+            <FaBars className=" md:hidden" />
+          </button>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

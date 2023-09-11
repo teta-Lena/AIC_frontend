@@ -9,7 +9,7 @@ import {
 const Footer = () => {
 
     return (
-		<div className="w-full flex flex-col  items-center bg-[#390101]   text-white relative z-10 overflow-hidden py-2">
+		<div className="w-full flex flex-col items-center bg-[#390101] border-t  text-white relative z-10 overflow-hidden py-2">
 			<div className="ltab:flex w-full grid five:grid-cols-2 justify-between xtab:px-20 phone:px-4 px-2 py-10 gap-5">
 				<div className="flex text-sm ltab:text-base flex-col five:items-start items-center">
 					<img className="ltab:w-[150px] w-[100px]" src="/logoq.png" alt="" />
@@ -101,7 +101,7 @@ const Footer = () => {
 					<p className="ltab:mt-4 mt-1">Get the latest news and updates</p>
 					<div className="flex mt-4 rounded-[3.5em] bg-white pl-3 py-1 pr-1 text-sm">
 						<input
-							className="w-full border-none outline-none text-gray-600"
+							className="w-full border-none outline-none text-black"
 							type="email"
 							placeholder="Enter your email"
 						/>
