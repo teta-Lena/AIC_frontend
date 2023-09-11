@@ -49,7 +49,7 @@ const Pictures = () => {
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-black to-[#390101]/80  w-full text-white md:h-screen"
+      className="bg-gradient-to-b from-dark-brownish to-bg-african w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
