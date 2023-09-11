@@ -12,7 +12,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/music" element={<MusicIndex />} />
         <Route path="/music/:id" element={<MusicIdPage />} />
-        <Route path="/music/:id" element={<MusicIdPage />} />
         <Route path="/bio" element={<Bio />} />
       </Routes>
     </BrowserRouter>
