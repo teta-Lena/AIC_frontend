@@ -1,9 +1,9 @@
 import { BiEnvelopeOpen, BiGlobe } from "react-icons/bi";
 import {
-	FaLinkedin,
-	FaGithubSquare,
-	FaFacebookSquare,
-	FaInstagramSquare,
+  FaLinkedin,
+  FaGithubSquare,
+  FaFacebookSquare,
+  FaInstagramSquare,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -101,12 +101,13 @@ const Footer = () => {
 					<p className="ltab:mt-4 mt-1">Get the latest news and updates</p>
 					<div className="flex mt-4 rounded-[3.5em] bg-white pl-3 py-1 pr-1 text-sm">
 						<input
-							className="w-full border-none outline-none "
+							className="w-full border-none outline-none text-gray-600"
 							type="email"
 							placeholder="Enter your email"
 						/>
 						<button
 							className={`rounded-3xl bg-[#390101] text-white ml-3 font-semibold px-4 py-2`}
+							
 						>
 							Subscribe
 						</button>
