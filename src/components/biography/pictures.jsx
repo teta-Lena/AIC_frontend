@@ -36,12 +36,12 @@ const Pictures = () => {
   };
 
   return (
-    <div className="image-slider relative flex items-center justify-center h-screen">
+    <div className="image-slider relative flex items-center justify-center h-screen bg-gradient-to-b from-dark-brownish to-black">
       <div className="slider-container relative">
         <img
           src={pics[currentSlide].image}
           alt={pics[currentSlide].alt}
-          className="slider-image w-full max-w-screen-lg h-auto max-h-[50vw] sm:max-h-[70vh] transform transition-transform hover:scale-105"
+          className="slider-image w-full max-w-screen-lg h-auto max-h-[50vw] sm:max-h-[70vh] rounded-lg transform  transition-transform hover:scale-105"
         />
         <div className="slider-navigation absolute bottom-4 left-0 right-0 mx-auto flex justify-center">
           <button
