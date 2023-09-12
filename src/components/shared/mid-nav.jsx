@@ -7,7 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 export const Logo = () => (
   <Link to={"/"} className="logo flex items-center gap-x-2">
     <img className="w-8" src="/ArtZone.png" alt="" />
-    <span>Ariel Wayz</span>
+    <span className=" font-luckyGuy">Ariel Wayz</span>
   </Link>
 );
 
