@@ -1,88 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ways3 from "@/assets/pic3.jpg";
-import ways2 from "@/assets/pic2.jpg";
-import ways1 from "@/assets/yb.jpeg";
+import img1 from "../../assets/pic2.jpg";
+import img2 from "../../assets/pic3.jpg";
+import img3 from "../../assets/pic6.jpg";
 
 
 const Pictures = () => {
-  const portfolios = [
-    {
-      id: 1,
-      src: ways1,
-    },
-    {
-      id: 2,
-      src: ways2,
-    },
-    {
-      id: 3,
-      src: ways3,
-    },
-    {
-      id: 4,
-      src: ways1,
-    },
-    {
-      id: 5,
-      src: ways2,
-    },
-    {
-      id: 6,
-      src: ways3,
-    },
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const pics = [
+    { image: img1, alt: "Image 1" },
+    { image: img2, alt: "Image 2" },
+    { image: img3, alt: "Image 3" },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) =>
+        prevSlide === pics.length - 1 ? 0 : prevSlide + 1
+      );
+    }, 5000); // Change image every 5 seconds (adjust as needed)
 
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % portfolios.length);
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? portfolios.length - 1 : prevSlide - 1
+      prevSlide === 0 ? pics.length - 1 : prevSlide - 1
     );
   };
 
-  const imageStyle = "w-16 h-80 border-2 border-black-330"; // Apply the same style to all images
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === pics.length - 1 ? 0 : prevSlide + 1
+    );
+  };
 
   return (
-    <div
-      name="portfolio"
-      className="bg-gradient-to-b from-dark-brownish border-0 to-black w-full text-white md:h-screen"
-    >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Pictures
-          </p>
-          <p className="py-6">Check out some of the pictures</p>
-        </div>
-
-        <div className="relative">
-          <div
-            key={portfolios[currentSlide].id}
-            className="transform transition-transform flex flex-col items-center justify-center"
-          >
-            <img
-              src={portfolios[currentSlide].src}
-              alt=""
-              className={`rounded-md duration-200 hover:scale-105 w-200 h-200 ${imageStyle}`}
-            />
-            <div className="flex items-center justify-center"></div>
-          </div>
-
-          {/* Left and right arrow buttons */}
+    <div className="image-slider relative flex items-center justify-center h-screen">
+      <div className="slider-container relative">
+        <img
+          src={pics[currentSlide].image}
+          alt={pics[currentSlide].alt}
+          className="slider-image w-full max-w-screen-lg h-auto max-h-[50vw] sm:max-h-[70vh] transform transition-transform hover:scale-105"
+        />
+        <div className="slider-navigation absolute bottom-4 left-0 right-0 mx-auto flex justify-center">
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10"
+            className="slider-button bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-l text-xl hover:scale-70"
           >
             <FaArrowLeft />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 text-4xl text-white cursor-pointer z-10"
+            className="slider-button bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-r text-xl hover:scale-70"
           >
             <FaArrowRight />
           </button>

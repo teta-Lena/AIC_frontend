@@ -17,9 +17,6 @@ const HomeBio = () => {
           />
         </div>
         <div className="flex flex-col justify-center h-full text-black">
-          <h2 className="text-4xl sm:text-7xl font-bold text-white">
-            Ariel Way's biography
-          </h2>
           <p className="text-gray-500 py-4 max-w-md">
             She is a talented Rwandan singer and songwriter whose music
             transcends borders. Her soulful melodies and lyrics carry messages
