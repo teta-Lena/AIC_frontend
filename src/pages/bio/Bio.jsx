@@ -1,13 +1,22 @@
+import React from "react";
+import Footer from "@/components/shared/footer";
+import Navbar from "@/components/shared/navbar";
+import Home from "@/components/shared/navbar";
+import HomeBio from "@/components/biography/homeBio";
 import AboutHer from "@/components/biography/aboutHer";
 import Pictures from "@/components/biography/pictures";
-import MainLayout from "@/layouts/MainLayout";
+import MidNav from "@/components/shared/mid-nav";
 
 const Bio = () => {
   return (
-    <MainLayout>
+    <div>
+      <Home />
+      <MidNav />
+      <HomeBio />
       <AboutHer />
       <Pictures />
-    </MainLayout>
+      <Footer />
+    </div>
   );
 };
 

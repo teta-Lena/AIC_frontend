@@ -9,7 +9,7 @@ import {
 const Footer = () => {
 
     return (
-		<div className="w-full flex flex-col items-center bg-[#390101] border-t  text-white relative z-10 overflow-hidden py-2">
+		<div className="w-full flex flex-col items-center bg-[#390101]  text-white relative z-10 overflow-hidden py-2">
 			<div className="ltab:flex w-full grid five:grid-cols-2 justify-between xtab:px-20 phone:px-4 px-2 py-10 gap-5">
 				<div className="flex text-sm ltab:text-base flex-col five:items-start items-center">
 					<img className="ltab:w-[150px] w-[100px]" src="/wayzone.png" alt="" />

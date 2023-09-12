@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../../components/shared/navbar";
-// import img from "../assets/yb.jpeg";
 import { Link } from "react-router-dom";
 import img from "../../assets/pic12.jpg";
 
