@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ways3 from "@/assets/wayz/ariel-wayz.jpg";
-import ways2 from "@/assets/wayz/Smiles.jpg";
-import ways1 from "@/assets/wayz/smile.jpg";
+import ways3 from "@/assets/pic3.jpg";
+import ways2 from "@/assets/pic2.jpg";
+import ways1 from "@/assets/yb.jpeg";
+
 
 const Pictures = () => {
   const portfolios = [
@@ -44,12 +45,12 @@ const Pictures = () => {
     );
   };
 
-  const imageStyle = "w-80 h-80 border-2 border-black-330"; // Apply the same style to all images
+  const imageStyle = "w-16 h-80 border-2 border-black-330"; // Apply the same style to all images
 
   return (
     <div
       name="portfolio"
-      className="bg-gradient-to-b from-dark-brownish to-dark-brownish w-full text-white md:h-screen"
+      className="bg-gradient-to-b from-dark-brownish border-0 to-black w-full text-white md:h-screen"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">

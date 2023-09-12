@@ -51,10 +51,30 @@ const Homepage = () => {
       icon: <FaNewspaper />,
       link: "/news",
     },
-    { image: pic7, option: "MUSIC", icon: <FaMusic />, link: "/music" },
-    { image: pic8, option: "VIDEOS", icon: <FaVideo />, link: "/videos" },
-    { image: pic9, option: "PHOTOS", icon: <FaCamera />, link: "/photos" },
-    { image: pic10, option: "BIOGRAPHY", icon: <FaHistory />, link: "/bio" },
+    {
+      image: pic7,
+      option: "MUSIC",
+      icon: <FaMusic />,
+      link: "/music"
+    },
+    {
+      image: pic8,
+      option: "VIDEOS",
+      icon: <FaVideo />,
+      link: "/videos"
+    },
+    {
+      image: pic9,
+      option: "PHOTOS",
+      icon: <FaCamera />,
+      link: "/photos"
+    },
+    {
+      image: pic10,
+      option: "BIOGRAPHY",
+      icon: <FaHistory />,
+      link: "/bio"
+    },
     {
       image: pic13,
       option: "LATEST NEWS",
