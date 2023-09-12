@@ -16,6 +16,8 @@ import Bio from "./pages/bio/Bio";
 import JoinLive from "./pages/live/JoinLive";
 import Live from "./pages/live/Live";
 import NotFound from "./pages/404/NotFound";
+import Videos from "./components/videos/Videos";
+import VideosPage from "./pages/videos";
 
 function App() {
   function PrivateRoutes() {
@@ -36,6 +38,7 @@ function App() {
           <Route path="/dashboard" element={<Home />} />
         </Route>
         <Route path="/" element={<Homepage />} />
+        <Route path="/videos" element={<VideosPage/>}  />
         <Route path="/music" element={<MusicIndex />} />
         <Route path="/music/:id" element={<MusicIdPage />} />
         <Route path="/bio" element={<Bio />} />
