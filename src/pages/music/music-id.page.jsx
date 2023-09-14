@@ -1,3 +1,4 @@
+import Lyrics from "@/components/music/lyrics";
 import Player from "@/components/music/player";
 import Suggested from "@/components/music/suggested";
 import MainLayout from "@/layouts/MainLayout";
@@ -33,9 +34,10 @@ const MusicIdPage = () => {
           </div>
           <Suggested />
         </div>
-        <h1 className=" mt-6 text-xl px-2">More Videos</h1>
+        <h1 className=" mt-6 text-xl px-2">Lyrics of {music?.title}</h1>
+        <Lyrics />
         {/* horizontal scroll */}
-        <div className="flex flex-nowrap gap-4 overflow-x-auto mt-4">
+        {/* <div className="flex flex-nowrap gap-4 overflow-x-auto mt-4">
           {otherMusics.map((music, i) => (
             <Link
               to={`/music/${music.id}`}
@@ -56,7 +58,7 @@ const MusicIdPage = () => {
               </div>
             </Link>
           ))}
-        </div>
+        </div> */}
       </div>
     </MainLayout>
   );

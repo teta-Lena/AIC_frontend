@@ -7,11 +7,11 @@ import { Link, useLocation } from "react-router-dom";
 export const Logo = () => (
   <Link to={"/"} className="logo flex items-center gap-x-2">
     <img className="w-8" src="/ArtZone.png" alt="" />
-    <span>ArtZone</span>
+    <span className=" font-luckyGuy">Ariel Wayz</span>
   </Link>
 );
 
-const MidNav = ({ hasLogo = false }) => {
+const MidNav = ({ hasLogo = false, noLogin = false }) => {
   const { authenticated, setViewLogin, setAuthenticated, setUser } = useAuthContext()
   const [path, setPath] = React.useState("");
   const location = useLocation();
@@ -65,14 +65,14 @@ const MidNav = ({ hasLogo = false }) => {
           Live
         </Link>
       </div>
-      <div className="">
+      <div className="flex items-center gap-x-2">
         {
-          !authenticated &&
+          !authenticated && !noLogin &&
           <button className="bg-white px-6 py-1 rounded-lg text-lg font-semibold text-black" onClick={() => setViewLogin(true)}>Login</button>
         }
 
         {
-          authenticated &&
+          authenticated && !noLogin &&
           <button className="bg-white px-6 py-1 rounded-lg text-lg font-semibold text-black" onClick={() => {
             setAuthenticated(false)
             setUser({})

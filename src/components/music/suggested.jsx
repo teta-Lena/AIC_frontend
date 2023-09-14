@@ -1,11 +1,10 @@
+import { mixArray } from "@/utils";
 import musics from "@/utils/musics";
-import React from "react";
-import { BsMusicNote } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 
 const Suggested = ({ artistName }) => {
   const params = useParams();
-  const otherMusics = musics.filter((music) => music.id !== Number(params.id));
+  const otherMusics = mixArray(musics).filter((music) => music.id !== Number(params.id)).slice(0, 3);
 
   return (
     <div className="min-w-[500px] lg:flex flex-col hidden w-1/3 border border-slate-50/20 rounded-md p-3">
@@ -17,7 +16,7 @@ const Suggested = ({ artistName }) => {
           <Link
             to={`/music/${music.id}`}
             key={i}
-            className="flex border-slate-50/20 border min-w-[300px] duration-300 p-0 m-0 bg-[#0e0404]/70 cursor-pointer  overflow-hidden items-start gap-2 justify-center rounded-lg shadow-md"
+            className="flex shadow min-w-[300px] duration-300 p-0 m-0  cursor-pointer border border-bg-african/40 hover:bg-[#2b1212] overflow-hidden items-start gap-2 justify-center rounded-lg "
           >
               <img
                 className=" min-w-[180px] aspect-video w-1/3 min-h-full object-cover"
