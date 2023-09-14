@@ -34,7 +34,7 @@ const Login = () => {
     }
 
     return (
-        <div className='absolute z-[60] backdrop-blur-sm w-screen h-screen flex items-center justify-center'>
+        <div className='absolute z-[60] backdrop-blur-sm w-full h-full flex items-center justify-center'>
             <div className='w-full h-full absolute z-[70]' onClick={() => setViewLogin(false)}></div>
             <div className='w-3/4 ltab:w-2/4 bg-white rounded-lg flex justify-center items-center flex-col z-[80] p-6'>
                 <span className='font-bold text-2xl font-luckyGuy'>Sign In</span>
