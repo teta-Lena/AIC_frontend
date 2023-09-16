@@ -18,6 +18,8 @@ import Live from "./pages/live/Live";
 import NotFound from "./pages/404/NotFound";
 import Videos from "./components/videos/Videos";
 import VideosPage from "./pages/videos";
+import  MyAdmin  from "./pages/admin/admin";
+
 
 function App() {
   function PrivateRoutes() {
@@ -44,6 +46,7 @@ function App() {
         <Route path="/bio" element={<Bio />} />
         <Route path="/join-live" element={<JoinLive />} />
         <Route path="/live/:streamId" element={<Live />} />
+        <Route path="/admin" element={<MyAdmin/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
