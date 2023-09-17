@@ -18,7 +18,7 @@ import Live from "./pages/live/Live";
 import NotFound from "./pages/404/NotFound";
 import Videos from "./components/videos/Videos";
 import VideosPage from "./pages/videos";
-import  MyAdmin  from "./pages/admin/admin";
+import MyAdmin from "./pages/admin/admin";
 
 
 function App() {
