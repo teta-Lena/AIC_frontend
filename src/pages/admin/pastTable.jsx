@@ -1,7 +1,7 @@
 import Wayz from '@/assets/pic7.jpg'
 import { Link } from 'react-router-dom'
 
-export default function PastTable(){
+const PastTable = () => {
     return(
         <table className=' w-4/6 border-2 mt-5'>
   <thead className='border bg-gray-100'>
@@ -36,3 +36,5 @@ export default function PastTable(){
 </table>
     )
 }
+
+export default PastTable;

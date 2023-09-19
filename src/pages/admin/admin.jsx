@@ -2,13 +2,13 @@ import MidNav from "@/components/shared/mid-nav"
 import MyTable from "./create"
 
 
-export default function MyAdmin() {
+const MyAdmin = () => {
     return(
        <div>
         <MidNav/>
         <MyTable/>
-        </div>
-    
-       
+        </div>   
     )
 }
+
+export default MyAdmin;
