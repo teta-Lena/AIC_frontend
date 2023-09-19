@@ -12,7 +12,7 @@ export const Logo = () => (
 );
 
 const MidNav = ({ hasLogo = false, noLogin = false }) => {
-  const { authenticated, setViewLogin, setAuthenticated, setUser } = useAuthContext()
+  const { authenticated, setViewLogin, setAuthenticated, setUser, user } = useAuthContext()
   const [path, setPath] = React.useState("");
   const location = useLocation();
   const [isMobile, setIsMobile] = React.useState(false);
@@ -32,6 +32,9 @@ const MidNav = ({ hasLogo = false, noLogin = false }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const isArtist = user?.role === "ARTIST";
+
   return (
     <div className=" sticky top-0 z-[50] w-full flex gap-x-8 text-lg items-center justify-between p-5 bg-black text-white">
       <div className="">{hasLogo && <Logo />}</div>
@@ -61,9 +64,15 @@ const MidNav = ({ hasLogo = false, noLogin = false }) => {
         <Link to={"/store"} className={path === "/store" ? "border-b-2" : ""}>
           Store
         </Link>
-        <Link to={"/join-live"} className="">
-          Live
-        </Link>
+        {isArtist ? (
+          <Link to={"/admin"} className={path === "/admin" ? "border-b-2" : ""}>
+            Live (Admin)
+          </Link>
+        ) : (
+          <Link to={"/join-live"} className={path === "/join-live" ? "border-b-2" : ""}> 
+            Live (Join Stream)
+          </Link>
+        )}
       </div>
       <div className="flex items-center gap-x-2">
         {

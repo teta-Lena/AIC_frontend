@@ -19,6 +19,7 @@ import NotFound from "./pages/404/NotFound";
 import Videos from "./components/videos/Videos";
 import VideosPage from "./pages/videos";
 import MyAdmin from "./pages/admin/admin";
+import { useAuthContext } from "./contexts/AuthContext";
 
 
 function App() {
@@ -30,12 +31,16 @@ function App() {
     return <Navigate to="/home" />;
   }
 
+  const {user, authenticated } = useAuthContext();
+
+  const isArtist = user?.role === "ARTIST";
+
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/home" element={<Homepage />} />
-        <Route path="/login" element={<Home />} />
+        <Route path="/login" element={<Homepage />} />
+        
         <Route element={<PrivateRoutes />}>
           <Route path="/dashboard" element={<Home />} />
           <Route path="/admin" element={<MyAdmin/>}/>
