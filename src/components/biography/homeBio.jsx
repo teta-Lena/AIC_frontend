@@ -1,23 +1,22 @@
-/* eslint-disable react/no-unknown-property */
 import HeroImage from "@/assets/wayz/Inwedding.jpeg";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const HomeBio = () => {
   return (
-    <div
-      name="home"
-      className="h-screen w-full bg-gradient-to-b from-bg-african to-black"
-    >
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row gap-3 space-x-6">
-        <div>
-          <img
-            src={HeroImage}
-            alt="my profile"
-            className="rounded-2xl mx-auto  md:w-full w-auto h-auto"
-          />
-        </div>
-        <div className="flex flex-col justify-center h-full text-black">
-          <p className="text-gray-500 py-4 max-w-md">
+    <div className="relative bg-gradient-to-b from-bg-african to-black overflow-hidden">
+      <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center justify-center min-h-screen px-4 space-y-6 md:space-y-0">
+        
+      <div className="md:w-1/2">
+        <img
+          src={HeroImage}
+          alt="my profile"
+          className="rounded-2xl mx-auto mt-5 md:ml-0 md:mr-auto"
+        />
+      </div>
+        
+        
+        <div className="flex flex-col justify-center md:w-1/2 text-white md:p-12">
+          <p className="text-gray-500 max-w-lg">
             She is a talented Rwandan singer and songwriter whose music
             transcends borders. Her soulful melodies and lyrics carry messages
             of love, unity, and hope. Ariel's unique blend of traditional
@@ -41,6 +40,7 @@ const HomeBio = () => {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
