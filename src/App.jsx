@@ -19,6 +19,7 @@ import NotFound from "./pages/404/NotFound";
 import Videos from "./components/videos/Videos";
 import VideosPage from "./pages/videos";
 import MyAdmin from "./pages/admin/admin";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <ToastContainer theme="colored" position="top-right" autoClose closeButton />
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/home" element={<Homepage />} />
