@@ -10,7 +10,6 @@ import { useParams } from 'react-router-dom';
 
 const Live = () => {
 
-
     const { streamId } = useParams();
     const { user, authenticated, setViewLogin } = useAuthContext()
     const { activeStream, setActiveStream } = useStreamContext()

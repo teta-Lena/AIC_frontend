@@ -38,6 +38,7 @@ function App() {
         <Route path="/login" element={<Home />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/dashboard" element={<Home />} />
+          <Route path="/admin" element={<MyAdmin/>}/>
         </Route>
         <Route path="/" element={<Homepage />} />
         <Route path="/videos" element={<VideosPage/>}  />
@@ -46,7 +47,6 @@ function App() {
         <Route path="/bio" element={<Bio />} />
         <Route path="/join-live" element={<JoinLive />} />
         <Route path="/live/:streamId" element={<Live />} />
-        <Route path="/admin" element={<MyAdmin/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -1,44 +1,92 @@
 import Wayz from '@/assets/pic7.jpg'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import api from '@/api'
+import { FaShare } from 'react-icons/fa'
+import {BiDotsVerticalRounded} from 'react-icons/bi'
+import {BsArrowRightSquare} from 'react-icons/bs'
+import { format, parseISO } from 'date-fns'
 
-export default function UpcomingTable(){
+const UpcomingTable = () => {
+
+  const [streams, setStreams] = useState([])
+
+  const getStreams = async () => {
+    try{
+      const request = await api().get("/stream/get-streams?page=0&limit=5", {
+        headers: {
+          "Authorization" : `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json"
+        }
+      })
+      const {data} = request.data
+
+      setStreams(data.streams)
+    } catch(error) {
+      console.log(error)
+      toast.error(error.response.data.message)
+    }
+  }
+
+  useEffect(() => {
+    getStreams()
+  }, [])
+
     return(
-        <table className=' w-5/6 border-2 mt-5'>
-  <thead className='border bg-gray-100'>
-    <tr>
-      <th>Title</th>
-      <th className=''>Created</th>
-      <th>Scheduled</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr className='items-center  '>
-      <td className='flex flex-row gap-x-4 w-5/6 h-20 items-center justify-center  '>
-        <img src={Wayz} alt="arielle's upcoming events" className='rounded-full w-8 '/>
-        <p className='flex flex-col'>
-          Dancing with the stars 
-          <span className=' w-1/2 rounded-lg bg-sky text-1'>Scheduled</span>
-        </p>
-      </td>
-      <td className=' w-1/6 text-black text-center item-center '>12:13 PM</td>
-      <td className='text-center'>02:12 PM</td>
-      <td className='flex flex-row gap-x-5 justify-center items-center h-20'>
-        <Link to={''} className='flex content-center '>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
-</svg>
-<span>Share</span>
-</Link>
-<button className='w-40 h-10 rounded-md bg-black text-white'>Enter stream</button>
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-
-      </td>
-    </tr>
-   
-  </tbody>
-</table>
+      <div className="flex flex-col mt-3">
+        <div className="-m-1.5 overflow-x-auto">
+          <div className="p-1.5 min-w-full inline-block align-middle">
+            <div className="border rounded-lg overflow-hidden ">
+              <table className="min-w-full divide-y divide-gray-300 ">
+                <thead className="bg-gray-100 text-xl">
+                {/* bg-[#C7C7C7] */}
+                  <tr>
+                    <th scope="col" className="px-12 py-3 text-left text-md font-medium text-[#565656]">Title</th>
+                    <th scope="col" className="px-6 py-3 text-left text-md font-medium text-[#565656]">Created</th>
+                    <th scope="col" className="px-6 py-3 text-left text-md font-medium text-[#565656]">Scheduled</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                {
+                  streams?.map((stream) => (
+                    <tr key={stream.id}>
+                      <td className="px-12 py-4 whitespace-nowrap text-md font-medium text-gray-800 flex flex-row gap-5">
+                        <img src={Wayz} alt='Ariel upcoming events' className='rounded-full w-12'/>
+                        <div>
+                          <h1 className='font-bold'>{stream.title}</h1>
+                          <p className='text-md text-blue-500 lowercase'>{stream.status}...</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-md text-gray-800">
+                        {format(parseISO(stream.createdAt), "EEE, MMM d, h:mm a")}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-md text-gray-800">5:30 PM</td>
+                      <td className="px-6 whitespace-nowrap text-md font-medium ">
+                        <span className='flex items-center gap-2'><FaShare className=""/>Share</span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-md font-medium">
+                      <Link to={`/live/${stream.roomId}`} 
+                        className='bg-black mt-4 text-center w-40 h-10  rounded text-white text-md font-bold flex flex-row gap-4 justify-center items-center hover:bg-gray-900'>
+                          Enter stream <BsArrowRightSquare className="rounded"/>
+                      </Link>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-md font-medium">
+                        <BiDotsVerticalRounded className="text-xl"/>
+                      </td>
+                  </tr>
+                  ))  
+                }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     )
 }
+
+export default UpcomingTable;

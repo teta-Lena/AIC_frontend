@@ -55,7 +55,7 @@ const JoinLive = () => {
                 </div>
             </div>
             <button
-                onClick={handleJoinStream}
+                onClick={handleJoinStream}  
                 className='bg-bg-african mt-4 text-center w-44 h-12 mx-auto rounded text-white text-xl font-bold'>
                 Join Stream
             </button>
@@ -66,8 +66,10 @@ const JoinLive = () => {
                     streams?.map((stream) => (
                         <Link to={`/live/${stream.roomId}`} className='bg-blue-100 border-2 border-blue-600 my-3 rounded-xl p-3' key={stream.id}>
                             <div className='flex flex-col'>
+                                <span>Name: {stream.title}</span>
                                 <span>Created By: {stream.createdBy.names}</span>
                                 <span>Room Id: {stream.roomId}</span>
+                                <span>Created At: {stream.createdAt}</span>
                             </div>
                         </Link>
                     ))
