@@ -15,11 +15,15 @@ import {FaShare} from 'react-icons/fa';
 import {BsArrowRightSquare} from 'react-icons/bs';
 import {GrCircleQuestion} from 'react-icons/gr'
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import DateTimePicker from "react-datetime-picker";
+
 
 const MyTable = () => {
     const [showUpcomingTable,setShowUpcomingTable] = useState(true)
     const [showPastTable,setShowPastTable] = useState(false)
     const [clicked, setClicked] = useState(true)
+    const [showDateTimeField, setShowDateTimeField] = useState(false);
+    const [dateTime, setDateTime] = useState(new Date());
 
     const handleBothUpcomingClicks = () => {
         setClicked(true); // Set the state for "Upcoming" button
@@ -125,6 +129,7 @@ const MyTable = () => {
                 <button className="border-2 border-gray-400 mb-3 rounded-lg p-5 flex flex-row gap-5 cursor-pointer focus:outline-none hover:shadow-xl" onClick={() => {
                   setShowModal2(true);
                   setShowModal1(false);
+                  setShowDateTimeField(false);
                 }}>
                     <div className="text-4xl pt-1"><HiOutlineVideoCamera /></div>
                     <div className="flex flex-col">
@@ -134,7 +139,12 @@ const MyTable = () => {
                     <div className="text-4xl ml-auto"><HiChevronRight /></div>
                 </button>
 
-                <button className="border border-gray-400 mb-10 rounded-lg p-5 flex flex-row gap-5 focus:outline-none hover:shadow-xl">
+                <button className="border border-gray-400 mb-10 rounded-lg p-5 flex flex-row gap-5 focus:outline-none hover:shadow-xl"
+                onClick={() => {
+                  setShowModal2(true);
+                  setShowModal1(false);
+                  setShowDateTimeField(true);
+                }}>
                     <div className="text-4xl pt-1"><FaRegCalendarAlt /></div>
                     <div className="flex flex-col">
                     <h1 className="text-black font-bold mr-auto">Schedule live stream</h1>
@@ -180,6 +190,20 @@ const MyTable = () => {
                     onChange={(e) => setFormData({ ...formData, description: e.target.value}) } 
                     placeholder="Say something about this live stream"></textarea>
                 </div>
+
+                {/* {showDateTimeField && (
+                  <div className="mb-6">
+                    <label htmlFor="dateTime" className="block mb-2 text-sm font-medium text-gray-600 flex gap-1">
+                      Date & Time <GrCircleQuestion className="mt-1" data-tooltip-id="datetime-tooltip" />
+                      <ReactTooltip id="datetime-tooltip" place="top" content="Select the date and time for the live stream" />
+                    </label>
+                    <DateTimePicker id="datetime" onChange={(value) => setDateTime(value)} value={dateTime} minDate={new Date()}/>
+                    <div>
+                      <DateTimePicker/>
+                    </div>
+                  </div>
+
+                )}  */}
 
                 <div class="flex items-start mb-6">
 
@@ -266,7 +290,6 @@ const MyTable = () => {
                   </div>
                   </div>
                 </Modal>
-
         </div>
         
     )
