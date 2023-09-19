@@ -1,4 +1,3 @@
-
 import "./App.css";
 import {
   BrowserRouter,
@@ -19,7 +18,7 @@ import NotFound from "./pages/404/NotFound";
 import Videos from "./components/videos/Videos";
 import VideosPage from "./pages/videos";
 import MyAdmin from "./pages/admin/admin";
-
+import VideoControls from "./components/video/video";
 
 function App() {
   function PrivateRoutes() {
@@ -33,15 +32,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/videostream" element={<VideoControls />} />
+
         <Route path="/home" element={<Homepage />} />
         <Route path="/login" element={<Home />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/dashboard" element={<Home />} />
-          <Route path="/admin" element={<MyAdmin/>}/>
+          <Route path="/admin" element={<MyAdmin />} />
         </Route>
         <Route path="/" element={<Homepage />} />
-        <Route path="/videos" element={<VideosPage/>}  />
+        <Route path="/videos" element={<VideosPage />} />
         <Route path="/music" element={<MusicIndex />} />
         <Route path="/music/:id" element={<MusicIdPage />} />
         <Route path="/bio" element={<Bio />} />
