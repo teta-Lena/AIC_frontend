@@ -13,7 +13,7 @@ const VideosPage = () => {
     <MainLayout>
       <div className="grid w-full lg:grid-cols-4 md:grid-cols-3 five:grid-cols-2   gap11">
         {musics.map((video, i) => (
-          <div key={i} className="wrapper border border-[#270d0d]">
+          <div key={i} className="wrapper border-[#341717] p-0 m-0 border-[1px]">
             <img
               className="image"
               src={

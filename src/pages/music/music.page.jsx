@@ -29,7 +29,7 @@ const MusicIndex = () => {
             <Link
               to={`/music/${music.id}`}
               key={music.id}
-              className="flex duration-300 border-[#270d0d] p-0 m-0 border cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
+              className="flex duration-300 border-[#341717] p-0 m-0 border-[1px] cursor-pointer music-card max-w[400px] relative aspect-square overflow-hidden flex-col items-center justify-center bg-white roundedlg shadow-md"
             >
               <img
                 className="  absolute top-0 bottom-0 right-0 left-0 min-w-full min-h-full object-cover"
